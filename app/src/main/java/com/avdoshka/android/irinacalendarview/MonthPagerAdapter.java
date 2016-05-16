@@ -24,6 +24,7 @@ public class MonthPagerAdapter extends PagerAdapter {
         int currentYearNumber = position / 12;
         monthView.setYear(monthView.getYear() + currentYearNumber);
         monthView.setMonthNumber(++currentMonthNumber);
+        monthView.initViewGroup();
         collection.addView(monthView);
         return monthView;
     }

@@ -56,7 +56,7 @@ public class MonthView extends TableLayout implements View.OnClickListener{
             }
             LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             layoutInflater.inflate(R.layout.month_view_layout, this, true);
-            initViewGroup();
+
         }
     }
 
@@ -191,12 +191,12 @@ public class MonthView extends TableLayout implements View.OnClickListener{
 
     public void setMonthNumber(int monthNumber) {
         this.monthNumber = monthNumber;
-        initViewGroup();
+
     }
 
     public void setYear(int year) {
         this.year = year;
-        initViewGroup();
+
     }
 
     public int getMonthNumber() {
