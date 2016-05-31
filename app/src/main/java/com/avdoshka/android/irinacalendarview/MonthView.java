@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 /**
@@ -24,6 +26,7 @@ public class MonthView extends TableLayout implements View.OnClickListener{
     private static final float INITIAL_TEXT_SIZE = 45f;
     private static final String TEXT_TO_MEASURE = "22";
     private static final float VALID_TEXT_WIDTH_PERCENTAGE = 0.8f;
+    private static final java.lang.String TAG = "MonthView";
     private int monthNumber; //January -> 1
     private int year;
    // private OnLeftOrRightButtonClickListener onLeftOrRightButtonClickListener;
@@ -95,6 +98,7 @@ public class MonthView extends TableLayout implements View.OnClickListener{
     // Проставляет рассчитанные ширину, высоту, размер шрифта для всех элементов таблицы
     private void setSizesAndText(TableLayout tableLayout, int width, int height, float textSizePX) {
         Month month = new Month(monthNumber, year);
+        Log.d(TAG, "MonthView: " + monthNumber + " monthLabel: " + month.getMonthLabel() + " monthArr: " + Arrays.toString(month.getMonthArr()));
         FrameLayout frameLayout = (FrameLayout) tableLayout.getChildAt(0);
         frameLayout.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, height));
 

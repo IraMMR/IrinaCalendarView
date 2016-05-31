@@ -21,6 +21,7 @@ public class Month {
 
     private void initMonthArray() {
         Calendar calendar = Calendar.getInstance();
+        calendar.clear();
         calendar.set(Calendar.MONTH, monthNumber - 1);
         calendar.set(Calendar.YEAR, year);
         int thisMonthMax = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -68,6 +69,7 @@ public class Month {
     public String getMonthLabel() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("LLLL yyyy");
         Calendar calendar = Calendar.getInstance();
+        calendar.clear();
         calendar.set(Calendar.MONTH, monthNumber - 1);
         calendar.set(Calendar.YEAR, year);
         return simpleDateFormat.format(calendar.getTimeInMillis());
@@ -79,6 +81,14 @@ public class Month {
             System.out.println("**********Month-------" + i + "  ***************");
             System.out.println(Arrays.toString(month.getMonthArr()));
             System.out.println();
+        }
+        for (int i = 0; i < 12; i++) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.clear();
+            calendar.set(Calendar.MONTH, i);
+            calendar.set(Calendar.YEAR, 2016);
+            System.out.println(calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+
         }
 
     }
